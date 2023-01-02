@@ -1,6 +1,9 @@
-import { useState, useEffect } from "react";
-import Header from "./components/Header";
+import { useState } from "react";
+import { Routes, Route } from "react-router-dom";
+// import Header from "./components/Header";
 import ProductList from "./components/ProductList";
+// import About from "./components/About";
+// import Contact from "./components/Contact";
 
 function App() {
   const [products, setProducts] = useState ([
@@ -16,18 +19,11 @@ function App() {
     setProducts(newProducts);
   }
 
-  const [name, setName] = useState('Fikri');
-
-  useEffect(() => {
-    console.log('Use Effect Running');
-  }, [name]);
-
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
       <ProductList products={products} deleteProduct={deleteProduct}/>
-      <button onClick={() => setName('Joko')}>Change Name</button>
-      <p>{name}</p>
+      
     </div>
   );
 }
